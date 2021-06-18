@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <div>
+        <p><strong> Click buttons to change style of text: </strong></p>
+        <hr>
+        <button id="btn_changefont" >Try random font</button>
+        <button id="btn_changecolor" >Try random color</button>
+    </div>
+    <hr>
+    <div style="border: 2px outset black;">
+        
+        <p id="p_first_line">Change me!</p>
+    </div>
+
+    <script>
+        document.getElementById("btn_changefont").addEventListener("click",font_change);
+        document.getElementById("btn_changecolor").addEventListener("click",color_change);
+        
+        var familylist = ["Times New Roman","Verdana","Comic sans MS","WildWest","Bedrock"];
+        var colors = ["Tomato","Orange","DodgerBlue","MediumSeaGreen","Violet","SlateBlue","Gray","LightGray"];
+        
+        function font_change(){
+            var i = Math.round(Math.random()*(familylist.length-1));
+            var family = familylist[i];
+            var size = Math.round(Math.random()*7);
+            document.getElementById("p_first_line").style.fontFamily=family;
+            document.getElementById("p_first_line").style.fontSize=size;
+            document.getElementById("p_first_line").innerHTML = family+", Size: "+size;
+        }
+        function color_change(){ 
+            var i = Math.round(Math.random()*(colors.length-1));
+            document.getElementById("p_first_line").style.color=colors[i];
+        }
+    </script>
+</body>
+</html>
