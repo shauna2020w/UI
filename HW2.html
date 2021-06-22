@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        table,th,tr,tb{
+            border: none;
+            border-collapse: collapse;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .col0{
+            text-align: left;
+            text-transform:capitalize;
+        }
+        
+        #row0,#r0c0{
+            text-transform:uppercase;
+            font-family: 'Times New Roman', Times, serif;
+            font-size:small;
+            font-weight:bold;
+        }
+        .oddrow{
+            background-color: rgb(200, 241, 193);
+        }
+
+        #tb2{
+            border: 1px solid black;
+            border-collapse:separate;
+        }
+        #tb2 td{
+            border: 1px solid black;
+        }
+        #tb2-1 td,#tb2-2 td{
+            text-align: left;
+        }
+
+        #tb3{
+            border: 1px solid black;
+            border-collapse: separate;
+        }
+
+        #tb3 td, #tb4 td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #tb4{
+            border-collapse: separate;
+        }
+        #tb4 td{
+            border: 1px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font-family:cursive;
+            font-size: larger;
+            background-color: rgb(44, 214, 172);
+       }
+       a,a:link:active,a:visited:active{
+           text-decoration: none;
+           color: black;
+       }    
+    </style>
+</head>
+<body>
+    <p>Assignment 2: Shuang</p> 
+    <hr>
+    <div></div>
+        <h1>Exercise 1:</h1>
+        <table id="tb1">
+            <th colspan="6" style="background-color: rgb(160, 197, 160);
+            font-family: 'Times New Roman', Times, serif; 
+            font-style: italic;
+            font-size:x-large;
+            font-weight:bolder;">
+                My tech stock picks
+            </th>
+            <tr id="row0">
+                <td class="col0"id="r0c0">name</td>
+                <td>symbol</td>
+                <td>current</td>
+                <td>52WK hi</td>
+                <td>52wk lo</td>
+                <td>P/E ratio</td>
+            </tr>
+
+            <tr class="oddrow">
+                <td class="col0">Microsoft</td>
+                <td>MSFT</td>
+                <td>86-3/8</td>
+                <td>119-15/16</td>
+                <td>75-1/2</td>
+                <td>56.09</td>
+            </tr>
+
+            <tr>
+                <td class="col0">Cisco systems</td>
+                <td>CSCO</td>
+                <td>72-1/8</td>
+                <td>82</td>
+                <td>24-13/16</td>
+                <td>400-69</td>
+            </tr>
+            <tr class="oddrow">
+                <td class="col0">america online</td>
+                <td>AOL</td>
+                <td>63</td>
+                <td>95-13/16</td>
+                <td>38-15/32</td>
+                <td>350.00</td>
+            </tr>
+            <tr>
+                <td class="col0">Qwest Communications</td>
+                <td>Q</td>
+                <td>44-7/16</td>
+                <td>66</td>
+                <td>25-3/4</td>
+                <td>74.06</td>
+            </tr>
+            <tr class="oddrow">
+                <td class="col0">Dell Computers</td>
+                <td>DELL</td>
+                <td>53-59/64</td>
+                <td>59-11/16</td>
+                <td>31-3/8</td>
+                <td>86.97</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div>
+        <h1>Exercise 2:</h1>
+        <table id="tb2" cellpadding=10;>
+            <tr>
+                <td>
+                    <table id="tb2-1" cellpadding="5">
+                        <tr>
+                            <td>Rubber</td>
+                            <td>baby</td>
+                        </tr>
+                        <tr>
+                            <td>buggy</td>
+                            <td>bumpers</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table id="tb2-2"cellpadding="5">
+                        <tr>
+                            <td>She</td>
+                            <td>sells</td>
+                        </tr>
+                        <tr>
+                            <td>sea</td>
+                            <td>shells</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>>
+        </table>
+    </div>
+
+    <hr>
+
+    <div>
+        <h1>Exercise 3:</h1>
+        <table id="tb3">
+            <tr>
+                <td colspan="3" style="font-size: larger;font-weight: bold;">Top</td>
+            </tr>
+            <tr>
+                <td rowspan="2">way left</td>
+                <td>middle up</td>
+                <td rowspan="2">way right</td>
+            </tr>
+            <tr><td>middle down</td></tr>
+            <tr>
+                <td  colspan="3">&nbsp;</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <hr>
+    
+    <div>
+        <h1>Exercise 4:</h1>
+        <table id="tb4">
+            <tr><td><a href="http://www.htmliseasy.com/common/easy_header_lg_left.gif">Home</a></td></tr>
+            <tr><td><a href="http://www.htmliseasy.com/contact.html">Email</a></td></tr>
+            <tr><td><a href="http://www.htmliseasy.com/index.html">Links</a></td></tr>
+        </table>
+      </div>
+</body>
+</html>
