@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #time{
+            color: red;
+            font-size: xx-large;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>Assignment 2: Shuang</p> 
+    <l>
+        <li>1.Implement Stop watch</li>
+        <li>2.Image icons in < ol></li>
+        <!-- <li>3.Implement a todo App</li> --> 
+    </li>
+    <hr>
+    <div>
+        <h1>Exercise 1:stop watch</h1>
+        <P>Set your stop watch below: </P>
+        (we will calcualte for you)
+        <br>
+        <input type="number"id="h">Hour
+        <br>
+        <input type="number"id="m">Minute
+        <br>
+        <input type="number"id="s">Second
+        <br>
+        <br>
+              
+        <button onclick="run()">Run</button>
+        <div id="time"><span id="hr">00</span>:<span id="min">00</span>:<span id="sec">00</span></div>
+        <br>
+        <button onclick="freeze()">Stop</button>
+        <button onclick="countdown()">Continue</button>
+        <button onclick="reset()">Reset</button>
+
+        
+        <p id="time"></p>
+        
+        <script>
+            function run(){
+                var h = document.getElementById("h").value ||00;
+                var m = document.getElementById("m").value ||00;
+                var s = document.getElementById("s").value ||00;
+
+                displaytime(h,m,s);
+                countdown(); 
+            }
+            function displaytime(h,m,s){
+                console.log(h,m,s);
+                s = Number(s) + Number(60*m) + Number(3600*h);
+                console.log(s);
+                var sec = s%60;
+                m = (s-sec)/60;
+                var min = m%60;
+                var hr = (m-min)/60;
+                
+
+                sec = addZero(sec);
+                min = addZero(min);
+                hr = addZero(hr);
+                console.log(hr,min,sec);
+                document.getElementById("hr").innerHTML = hr;
+                document.getElementById("min").innerHTML = min;
+                document.getElementById("sec").innerHTML = sec;
+            }
+            function addZero(i){
+                if(i<10){
+                    return "0"+i;
+                }else{
+                    return i;
+                }
+            }
+            var timeoutswitch;
+            function countdown(){
+                var h = document.getElementById("hr").innerText;
+                var m = document.getElementById("min").innerText;
+                var s = document.getElementById("sec").innerText;
+                var remain = s+(m*60)+(h*3600);
+                if (remain >=1){
+                    timeoutswitch = setTimeout(function(){
+                        displaytime(h,m,s-1);
+                        countdown();
+                    },1000)
+                }else if(remain == 0){
+                    alert("Time out!!");
+                }else{
+                    reset();
+                    alert("Invalid Enter, try again!!")
+                }
+            }
+            function freeze(){
+                clearTimeout(timeoutswitch);
+            }
+            function reset(){
+                freeze();
+                displaytime(0,0,0);
+                document.getElementById("h").value = 0;
+                document.getElementById("m").value = 0;
+                document.getElementById("s").value = 0;
+                
+            }
+            
+        </script>
+    </div>
+    <hr>
+    <div>
+        <h1>Exercise 2:list icon</h1>
+        <ol style="list-style-image:url('images.png');">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+    </div>
+    <hr>
+    
+    
+</body>
+</html>
