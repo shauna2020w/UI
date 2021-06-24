@@ -18,7 +18,7 @@
     <l>
         <li>1.Implement Stop watch</li>
         <li>2.Image icons in < ol></li>
-        <!-- <li>3.Implement a todo App</li> --> 
+        <li>3.Implement a todo App</li>
     </li>
     <hr>
     <div>
@@ -120,6 +120,46 @@
         </ol>
     </div>
     <hr>
+    <div>
+    <h1>Exercise 3:Todo list </h1>
+    <div style="border: 1px solid black;
+                margin-left: 100px;
+                margin-right: 100px;">
+    <p style="font-family: cursive; font-size: xx-large;">Make your TODO list !</p>
+    <hr>
+    <button onclick="document.getElementById('task').value=''"">Clear</button> 
+    <input id="task" type="text" value="Type your todo.. " style="width:80%; padding: 5px; margin: 10px;">
+    <br>
+    Do you want to insert this task in highlighted position:<br>
+    <button id="btn1">Add</button>
+    <button id="btn2">Skip</button>
+    <ol id="listoftask">
+        <li id="todo0"></li> 
+        <li id="todo1"></li>
+        <li id="todo2"></li>
+        <li id="todo3"></li>
+        <li id="todo4"></li>
+    </ol>
+    </div>
+    <script> 
+        var i = 0;
+        var target = document.getElementById("todo"+i%5);
+        target.style.backgroundColor = "yellow";
+        document.getElementById("btn1").addEventListener("click",add);
+        document.getElementById("btn2").addEventListener("click",next);
+        function add(){
+            var newtask = document.getElementById("task");
+            target.innerHTML = newtask.value;
+            next();
+        }
+        function next(){
+            target.style.backgroundColor = "white";
+            i+=1;
+            target = document.getElementById("todo"+i%5);
+            target.style.backgroundColor = "yellow";
+        }
+    </script>
+</div>
     
     
 </body>
